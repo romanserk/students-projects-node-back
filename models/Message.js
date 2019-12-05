@@ -4,17 +4,21 @@ const sequelize = require('../database/db.js')
 module.exports = sequelize.define(
     'messages',
     {
-        ID: {
-            type: Sequelize.STRING,
-            primaryKey: true,
-            allowNull: false,
-            unique: true
+        userID: {
+            type: Sequelize.INTEGER,
+            allowNull: false
         },
-        title: {
-            type: Sequelize.STRING
+        projectID: {
+            type: Sequelize.INTEGER,
+            allowNull: false
         },
         content: {
-            type: Sequelize.STRING(1024)
+            type: Sequelize.STRING,
+            allowNull: false
+        },
+        created_date: {
+            type: Sequelize.DATEONLY,
+            defaultValue: Sequelize.NOW
         }
     },
     {

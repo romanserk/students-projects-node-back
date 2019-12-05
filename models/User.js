@@ -23,6 +23,9 @@ module.exports = sequelize.define(
             type: Sequelize.STRING,
             allowNull: false
         },
+        github_profile: {
+            type: Sequelize.STRING
+        },
         created_date: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW

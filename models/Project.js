@@ -19,6 +19,9 @@ module.exports = sequelize.define(
         user_name: {
             type: Sequelize.STRING
         },
+        git_link: {
+            type: Sequelize.STRING
+        },
         created_date: {
             type: Sequelize.DATEONLY,
             defaultValue: Sequelize.NOW

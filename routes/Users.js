@@ -6,6 +6,8 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
 const User = require('../models/User')
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op;
 
 process.env.SECRET_KEY = '3l9TTa1mD@F0paas%3211WE!@@PLCsdaaRdv';
 
@@ -17,12 +19,21 @@ users.post('/register', (req, res) => {
         user_name: req.body.user_name,
         email: req.body.email,
         password: req.body.password,
+        github_profile: req.body.github_profile,
         created: today
     }
 
+
     User.findOne({
         where: {
-            email: req.body.email
+            [Op.or]: [
+                {
+                    email: req.body.email
+                },
+                {
+                    user_name: req.body.user_name
+                }
+            ]
         }
     })
         .then(user => {
@@ -38,7 +49,8 @@ users.post('/register', (req, res) => {
                         })
                 })
             } else {
-                res.json({ error: 'User already exists' })
+                user.user_name === req.body.user_name ? res.status(400).json({ error: 'User with such username already exists' }) : res.status(400).json({ error: 'User with such email already exists' })
+
             }
         })
         .catch(err => {
@@ -48,6 +60,7 @@ users.post('/register', (req, res) => {
 
 
 users.post('/login', (req, res) => {
+    const errors = []
     User.findOne({
         where: {
             user_name: req.body.user_name
@@ -61,10 +74,10 @@ users.post('/login', (req, res) => {
                     })
                     res.send(token)
                 } else {
-                    res.status(400).json({ error: 'invalid' })
+                    res.status(400).json({ error: 'Invalid Password' })
                 }
             } else {
-                res.status(400).json({ error: 'invalid' })
+                res.status(400).json({ error: 'Invalid username' })
             }
         })
         .catch(err => {
@@ -84,7 +97,8 @@ users.get('/profile', (req, res) => {
                 res.json({
                     data: {
                         user_name: user.user_name,
-                        email: user.email
+                        email: user.email,
+                        github_profile: user.github_profile
                     }
                 })
             } else {

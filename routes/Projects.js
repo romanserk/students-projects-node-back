@@ -4,6 +4,7 @@ const Project = require('../models/Project');
 const Tool_p = require('../models/Tool_p');
 const User = require('../models/User')
 const Participant = require('../models/Participant');
+const Message = require('../models/Message');
 var Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
@@ -14,7 +15,11 @@ const Op = Sequelize.Op;
 projects.get('/projects', (req, res) => {
 
     Project.findAll({
-        include: [{ model: Tool_p }]
+        include: [
+            { model: Tool_p },
+            { model: Participant },
+            { model: Message }
+        ]
     })
         .then(projects => {
             if (projects) {
@@ -36,7 +41,9 @@ projects.get('/projects/user', (req, res) => {
         where: {
             user_name: req.query.user_name
         },
-        include: [{ model: Tool_p }]
+        include: [
+            { model: Tool_p }
+        ]
     })
         .then(projects => {
             Participant.findAll({
@@ -75,7 +82,8 @@ projects.post('/projects/add', (req, res) => {
         description: req.body.description,
         userID: req.body.userID,
         created_date: today,
-        used_name: ''
+        used_name: '',
+        git_link: req.body.git_link
     }
 
     User.findOne({
@@ -118,17 +126,24 @@ projects.post('/projects/remove', (req, res) => {
                 }
             })
                 .then(response => {
-                    Project.destroy({
+                    Message.destroy({
                         where: {
-                            ID: req.body.projectID
+                            projectID: req.body.projectID
                         }
-                    })
-                        .then(projectID => {
-                            res.json({ projectID })
+                    }).then(() => {
+                        Project.destroy({
+                            where: {
+                                ID: req.body.projectID
+                            }
                         })
-                        .catch(err => {
-                            res.send('error: ' + err)
-                        });
+                            .then(projectID => {
+                                res.json({ projectID })
+                            })
+                            .catch(err => {
+                                res.send('error: ' + err)
+                            });
+                    })
+
                 }).catch(err => {
                     res.send('error: ' + err)
                 });
