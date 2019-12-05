@@ -47,7 +47,7 @@ Exposed api:
     <br/>params: username
   </li>
 </ul>
-Inline-style: 
-![alt text](https://github.com/romanserk/students-projects-node-back/blob/master/student-projects.png)
+![Image description](https://github.com/romanserk/students-projects-node-back/blob/master/student-projects.png)
+
     
 
