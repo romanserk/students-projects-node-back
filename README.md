@@ -12,11 +12,11 @@ Exposed api:
   </li>
   <li>
     user projects list: https://infinite-plains-84143.herokuapp.com/projects/user
-    params: username
+    <br/>params: username
   </li>
   <li>
     add ne project: https://infinite-plains-84143.herokuapp.com/projects/projects/add
-    params: project name, project description, user id, github link
+    <br/>params: project name, project description, user id, github link
   </li>
 </ul>
     
