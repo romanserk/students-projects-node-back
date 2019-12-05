@@ -3,6 +3,7 @@
 Back end part of students projects platform written in Node.js & express & sequelize, in which students can share projects, and find participants/team in order to work together of projects.
 
 Database based on mySQL, node server and mySQL database hosted on Heroku.
+project scheme: https://github.com/romanserk/students-projects-node-back/blob/master/student-projects.png
 
 Exposed api:
 
@@ -47,7 +48,8 @@ Exposed api:
     <br/>params: username
   </li>
 </ul>
-[Image description](https://raw.githubusercontent.com/romanserk/students-projects-node-back/master/student-projects.png)
+
+
 
     
 
