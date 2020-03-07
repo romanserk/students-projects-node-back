@@ -134,8 +134,8 @@ const generateDummyUsers = () => {
 
 const createDummyProjects = () => {
 
-    const projectsID = [1, 11, 21, 31, 41];
-    const usersID = [1, 11, 21, 31, 41];
+    const projectsID = [1, 2, 3, 4, 5];
+    const usersID = [1, 2, 3, 4, 5];
 
     const projects = [
         project_one = {
