@@ -9,6 +9,7 @@ const User = require('../models/User')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op;
 
+process.env.SECRET_KEY = '3l9TTa1mD@F0paas%3211WE!@@PLCsdaaRdv';
 
 
 
