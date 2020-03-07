@@ -119,7 +119,7 @@ const generateDummyUsers = () => {
                 user_name: userNames[index],
                 email: userMails[index],
                 password: hash,
-                github_profile: 'https://github.com/explore',
+                github_profile: 'https://github.com/romanserk/students-project-react-front',
                 created: today
             }))
         })).then(values => {
@@ -134,8 +134,8 @@ const generateDummyUsers = () => {
 
 const createDummyProjects = () => {
 
-    const projectsID = [1, 11, 21, 31, 41];
-    const usersID = [1, 11, 21, 31, 41];
+    const projectsID = [1, 2,3, 4, 5];
+    const usersID = [1,2,3,4,5];
 
     const projects = [
         project_one = {
@@ -144,7 +144,7 @@ const createDummyProjects = () => {
                 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam condimentum sem eget fermentum interdum. Sed eleifend elit a ex tincidunt, vitae dictum velit mollis. Vivamus at ex orci. Suspendisse tortor quam, laoreet quis interdum eget, consequat facilisis erat. Praesent aliquam, urna non placerat ornare, urna eros fringilla nunc, ut ornare ligula ante at lectus. Ut et risus sagittis, porttitor urna quis, sollicitudin justo. Duis at nibh ut lectus venenatis ultrices at a sapien.",
                 user_name: "user one",
                 userID: usersID[0],
-                git_link: 'https://github.com/explore'
+                git_link: 'https://github.com/romanserk/students-project-react-front'
             },
             tools: [
                 {
@@ -171,7 +171,7 @@ const createDummyProjects = () => {
                 description: "In lacinia malesuada dapibus. Pellentesque tempus velit in efficitur finibus. In sagittis convallis vestibulum. Donec ut mauris a ipsum fringilla feugiat id a purus. Integer at tincidunt lacus, sed semper velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
                 user_name: "user one",
                 userID: usersID[0],
-                git_link: 'https://github.com/explore'
+                git_link: 'https://github.com/romanserk/students-project-react-front'
             },
             tools: [
                 {
@@ -194,7 +194,7 @@ const createDummyProjects = () => {
                 description: "Vivamus nec dui diam. Nunc volutpat a quam nec tincidunt. Suspendisse vitae hendrerit mi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In eros nisl, ultricies a sapien ac, viverra tincidunt nulla. Sed porta, sapien id egestas consectetur, quam ante aliquam ligula, a blandit mi nisi id magna.",
                 user_name: "user two",
                 userID: usersID[1],
-                git_link: 'https://github.com/explore'
+                git_link: 'https://github.com/romanserk/students-project-react-front'
             },
             tools: [
                 {
@@ -222,7 +222,7 @@ const createDummyProjects = () => {
                 description: "Integer nisl dolor, tristique id sollicitudin a, porta ut enim. Integer lectus tortor, laoreet at blandit ac, vehicula eu purus. Pellentesque gravida lorem quis metus rhoncus, id ullamcorper erat tristique. Proin mattis vestibulum sapien, at posuere orci tincidunt a. Proin non ipsum eu metus fringilla gravida eu a odio. Sed id leo congue dui ultrices porta quis a nulla. Vestibulum viverra sem at felis aliquam mollis. Maecenas egestas et lorem ac tempus. Aliquam eu finibus nisl. Vivamus vulputate ipsum vel fringilla lacinia.",
                 user_name: "user two",
                 userID: usersID[1],
-                git_link: 'https://github.com/explore'
+                git_link: 'https://github.com/romanserk/students-project-react-front'
             },
             tools: [
                 {
@@ -242,7 +242,7 @@ const createDummyProjects = () => {
                 description: "In egestas dui a congue pellentesque. Curabitur dapibus dictum leo quis pellentesque. Mauris faucibus sit amet turpis in aliquam. Nam iaculis feugiat ante, eu molestie velit venenatis posuere. Mauris congue commodo luctus. Mauris vitae ante non felis vehicula dictum in ac neque. Proin a ex tristique, semper nibh quis, vulputate mauris. Integer auctor libero id augue rhoncus, eget tristique lorem maximus.",
                 user_name: "user three",
                 userID: usersID[2],
-                git_link: 'https://github.com/explore'
+                git_link: 'https://github.com/romanserk/students-project-react-front'
             },
             tools: [
                 {
