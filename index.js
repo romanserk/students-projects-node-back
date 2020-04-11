@@ -73,7 +73,7 @@ User.hasMany(Tool_u)
 
 
 sequelize
-    .sync({ force: false })
+    .sync({ force: true })
     .then(results => {
 
         User.findByPk(1)
